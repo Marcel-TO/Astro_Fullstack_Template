@@ -1,0 +1,53 @@
+---
+import "@/styles/globals.css";
+import Layout from "../layouts/Layout.astro";
+import HomeCard from "../components/HomeCard.astro";
+---
+
+<Layout title="Welcome to Astro.">
+  <main class="grid grid-cols-5 grid-rows-3 gap-4 place-content-center">
+    <div
+      class="col-span-3 col-start-2 flex justify-center items-center flex-col"
+    >
+      <h1
+        class="scroll-m-20 text-4xl font-extrabold tracking-widest lg:text-5xl mt-8 text-center"
+      >
+        Welcome to <span class="text-purple-500">Astro</span> Fullstack Template
+      </h1>
+      <p
+        class="flex justify-center text-muted-foreground text-wrap my-4 text-center"
+      >
+        This is a starter template for demonstrating how Astro can be used in a
+        variety of ways.
+      </p>
+    </div>
+    <div class="col-span-3 col-start-2 row-start-2">
+      <HomeCard
+        href="/showcases"
+        title="Showcases"
+        body="Explore the different showcases that this template has to offer."
+      />
+    </div>
+    <div class="col-start-2 row-start-3">
+      <HomeCard
+        href="/showcases/database"
+        title="Database integration"
+        body="See how Astro interacts with its integrated database."
+      />
+    </div>
+    <div class="col-start-3 row-start-3">
+      <HomeCard
+        href="/showcases/frontends"
+        title="Frontends"
+        body="Explore the different frontends that Astro can be used with."
+      />
+    </div>
+    <div class="col-start-4 row-start-3">
+      <HomeCard
+        href="/showcases/markdown"
+        title="Markdown"
+        body="Learn how Astro can be used with markdown files."
+      />
+    </div>
+  </main></Layout
+>

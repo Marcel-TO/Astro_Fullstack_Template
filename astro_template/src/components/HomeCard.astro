@@ -1,0 +1,26 @@
+---
+import { Button } from "@/components/ui/button.tsx";
+interface Props {
+  title: string;
+  body: string;
+  href: string;
+}
+
+const { href, title, body } = Astro.props;
+---
+
+<div class="relative rounded-lg border bg-card text-card-foreground shadow-sm">
+  <div class="flex flex-col space-y-1.5 p-6">
+    <h2 class="text-2xl font-semibold leading-none tracking-tight">{title}</h2>
+    <p class="text-sm text-muted-foreground">{body}</p>
+  </div>
+
+  <div class="mb-6">
+    <a href={href} class="p-6 pt-0">
+      <Button>
+        Learn more
+        <span class="ml-2">&rarr;</span>
+      </Button>
+    </a>
+  </div>
+</div>
