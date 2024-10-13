@@ -1,0 +1,27 @@
+---
+import { CommentsCard } from "@/components/custom/CommentsCard";
+import PageLayout from "../layouts/PageLayout.astro";
+import { db, Comment } from "astro:db";
+
+const comments = await db.select().from(Comment);
+---
+
+<PageLayout
+  title="Database Showcase"
+  description="Represents a page where it showcases the astro:db functionality"
+  heroImage="/blog-placeholder-3.jpg"
+>
+  <a href="/api/comments.json" target="_blank">
+    <button class="bg-black/50 hover:bg-black text-white font-bold py-2 px-4 rounded transition-all hover:scale-105">
+      ⎘ View JSON Endpoint
+    </button>
+  </a>
+
+  {
+    comments.map(({ author, body, createdAt }) => (
+      <div class="my-5">
+        <CommentsCard author={author} body={body} createdAt={createdAt} />
+      </div>
+    ))
+  }
+</PageLayout>
