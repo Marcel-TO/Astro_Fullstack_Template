@@ -1,53 +1,38 @@
 ---
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import PageLayout from "../layouts/PageLayout.astro";
 import "@/styles/globals.css";
-import Layout from "../layouts/Layout.astro";
-import HomeCard from "../components/HomeCard.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-  <main class="grid grid-cols-5 grid-rows-3 gap-4 place-content-center">
-    <div
-      class="col-span-3 col-start-2 flex justify-center items-center flex-col"
-    >
-      <h1
-        class="scroll-m-20 text-4xl font-extrabold tracking-widest lg:text-5xl mt-8 text-center"
-      >
-        Welcome to <span class="text-purple-500">Astro</span> Fullstack Template
-      </h1>
-      <p
-        class="flex justify-center text-muted-foreground text-wrap my-4 text-center"
-      >
-        This is a starter template for demonstrating how Astro can be used in a
-        variety of ways.
-      </p>
-    </div>
-    <div class="col-span-3 col-start-2 row-start-2">
-      <HomeCard
-        href="/showcases"
-        title="Showcases"
-        body="Explore the different showcases that this template has to offer."
-      />
-    </div>
-    <div class="col-start-2 row-start-3">
-      <HomeCard
-        href="/showcases/database"
-        title="Database integration"
-        body="See how Astro interacts with its integrated database."
-      />
-    </div>
-    <div class="col-start-3 row-start-3">
-      <HomeCard
-        href="/showcases/frontends"
-        title="Frontends"
-        body="Explore the different frontends that Astro can be used with."
-      />
-    </div>
-    <div class="col-start-4 row-start-3">
-      <HomeCard
-        href="/showcases/markdown"
-        title="Markdown"
-        body="Learn how Astro can be used with markdown files."
-      />
-    </div>
-  </main></Layout
+<PageLayout
+  title={SITE_TITLE}
+  description={SITE_DESCRIPTION}
+  heroImage="/blog-placeholder-1.jpg"
 >
+  <div>
+    <h1 class="text-2xl font-bold my-4">Welcome!</h1>
+
+    <p class="my-4">
+      This is a simple Astro Fullstack template that is built on top of the
+      official Astro Blog template.
+    </p>
+    <p class="my-4">
+      It includes other frameworks and libraries like Tailwind CSS and
+      Shadcn/UI.
+    </p>
+    <p class="my-4">
+      The goal of this template is to showcase the Astro framework and its
+      strengths. Astro offers versatile rendering options, including static site
+      generation, server-side rendering, and hybrid rendering, making it a
+      powerful and fast solution for various web development needs.
+    </p>
+    <p class="my-4">
+      This template includes a showcase section where different frontend
+      frameworks like React, Vue, and Svelte are implemented, demonstrating
+      Astro's flexibility. Additionally, it integrates AstroDB for storing,
+      querying, and displaying data seamlessly. The prebuilt blog feature allows
+      you to easily create and manage blog posts using markdown files, providing
+      a robust starting point for your content-driven projects.
+    </p>
+  </div>
+</PageLayout>

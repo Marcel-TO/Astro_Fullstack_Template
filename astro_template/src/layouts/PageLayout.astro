@@ -1,0 +1,45 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Background from "../components/Background.astro";
+import { TypographyH1 } from "@/components/ui/typography";
+
+const { title, description, heroImage } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+
+  <body
+    class="bg-cover bg-[url('/parabolic-rectangle.svg')] bg-center bg-fixed"
+  >
+    <Header />
+    <main class="flex flex-col justify-center items-center mt-5">
+      <article class="w-3/4">
+        <div class="flex justify-center w-full">
+          {
+            heroImage && (
+              <img
+                class="aspect-auto w-full rounded-lg shadow-2xl"
+                src={heroImage}
+                alt=""
+              />
+            )
+          }
+        </div>
+        <div class="my-5">
+          <div class="title text-white text-center mb-10">
+            <TypographyH1 text={title} />
+          </div>
+          <div class="text-white text-pretty">
+              <slot />
+          </div>
+        </div>
+      </article>
+    </main>
+    <Footer />
+  </body>
+</html>
